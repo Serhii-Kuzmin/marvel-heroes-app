@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/marvel-heroes-app/static/css/main.ab08c5ba.css",
-    "main.js": "/marvel-heroes-app/static/js/main.ac34fa8b.js",
+    "main.css": "/marvel-heroes-app/static/css/main.d3d0be27.css",
+    "main.js": "/marvel-heroes-app/static/js/main.c2bbd757.js",
     "static/media/vision.png": "/marvel-heroes-app/static/media/vision.067d4ae1936d64a577ce.png",
     "static/media/thor.jpeg": "/marvel-heroes-app/static/media/thor.533e3a5e127689ab0b1f.jpeg",
     "static/media/abyss.jpg": "/marvel-heroes-app/static/media/abyss.93d211d37b67a60bace9.jpg",
     "static/media/mjolnir.png": "/marvel-heroes-app/static/media/mjolnir.61f31e1809f12183a524.png",
     "index.html": "/marvel-heroes-app/index.html",
-    "main.ab08c5ba.css.map": "/marvel-heroes-app/static/css/main.ab08c5ba.css.map",
-    "main.ac34fa8b.js.map": "/marvel-heroes-app/static/js/main.ac34fa8b.js.map"
+    "main.d3d0be27.css.map": "/marvel-heroes-app/static/css/main.d3d0be27.css.map",
+    "main.c2bbd757.js.map": "/marvel-heroes-app/static/js/main.c2bbd757.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab08c5ba.css",
-    "static/js/main.ac34fa8b.js"
+    "static/css/main.d3d0be27.css",
+    "static/js/main.c2bbd757.js"
   ]
 }
