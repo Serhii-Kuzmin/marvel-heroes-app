@@ -3,14 +3,16 @@ import mjolnir from "../../resources/img/mjolnir.png";
 import { Component } from "react";
 
 import MarvelServices from "../../services/MarvelServices.js";
+import Spinner from "../spinner/Spiner.js";
 
 class RandomChar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.updateChar();
   }
   state = {
     char: {},
+    loading: true,
   };
 
   marvelService = new MarvelServices();
@@ -22,7 +24,7 @@ class RandomChar extends Component {
   //   );
 
   onChatLoaded = (char) => {
-    this.setState({ char });
+    this.setState({ char, loading: false });
   };
 
   updateChar = () => {
@@ -31,30 +33,11 @@ class RandomChar extends Component {
   };
 
   render() {
-    const {
-      char: { name, description, thumbnail, homepage, wiki },
-    } = this.state;
+    const { char, loading } = this.state;
+
     return (
       <div className="randomchar">
-        <div className="randomchar__block">
-          <img
-            src={thumbnail}
-            alt="Random character"
-            className="randomchar__img"
-          />
-          <div className="randomchar__info">
-            <p className="randomchar__name">{name}</p>
-            <p className="randomchar__descr">{description}</p>
-            <div className="randomchar__btns">
-              <a href={homepage} className="button button__main">
-                <div className="inner">homepage</div>
-              </a>
-              <a href={wiki} className="button button__secondary">
-                <div className="inner">Wiki</div>
-              </a>
-            </div>
-          </div>
-        </div>
+        {loading ? <Spinner /> : <View char={char} />}
         <div className="randomchar__static">
           <p className="randomchar__title">
             Random character for today!
@@ -72,4 +55,25 @@ class RandomChar extends Component {
   }
 }
 
+const View = ({ char }) => {
+  const { name, description, thumbnail, homepage, wiki } = char;
+
+  return (
+    <div className="randomchar__block">
+      <img src={thumbnail} alt="Random character" className="randomchar__img" />
+      <div className="randomchar__info">
+        <p className="randomchar__name">{name}</p>
+        <p className="randomchar__descr">{description}</p>
+        <div className="randomchar__btns">
+          <a href={homepage} className="button button__main">
+            <div className="inner">homepage</div>
+          </a>
+          <a href={wiki} className="button button__secondary">
+            <div className="inner">Wiki</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default RandomChar;
