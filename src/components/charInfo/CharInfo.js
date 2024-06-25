@@ -1,4 +1,5 @@
 import "./charInfo.scss";
+import PropTypes from "prop-types";
 
 import { Component } from "react";
 import MarvelService from "../../services/MarvelServices";
@@ -115,6 +116,10 @@ const View = ({ char }) => {
       </ul>
     </>
   );
+};
+
+CharInfo.propTypes = {
+  charId: PropTypes.number,
 };
 
 export default CharInfo;
